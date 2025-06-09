@@ -1,0 +1,3 @@
+__pycache__/
+task_logger/tasks.db
+*.pyc

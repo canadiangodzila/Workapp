@@ -76,8 +76,9 @@
         document.getElementById('submitBtn').addEventListener('click', function() {
             const date = document.getElementById('date').value;
             const shift = document.getElementById('shift').value;
-            if(date) {
-                alert(`You selected ${shift} shift on ${date}`);
+            if (date) {
+                const url = `log.html?date=${encodeURIComponent(date)}&shift=${encodeURIComponent(shift)}`;
+                window.location.href = url;
             } else {
                 alert('Please select a date.');
             }
