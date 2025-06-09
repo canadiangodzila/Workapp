@@ -56,8 +56,20 @@
     </style>
 </head>
 <body>
+    <script>
+        const currentUser = localStorage.getItem('currentUser');
+        if (!currentUser) {
+            window.location.href = 'login.html';
+        } else {
+            document.addEventListener('DOMContentLoaded', () => {
+                const welcome = document.getElementById('welcome');
+                if (welcome) welcome.textContent = `Logged in as ${currentUser}`;
+            });
+        }
+    </script>
     <div class="container">
         <h1>Select Shift</h1>
+        <p id="welcome"></p>
         <div class="form-group">
             <label for="date">Date:</label>
             <input type="date" id="date" name="date">
